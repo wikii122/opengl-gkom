@@ -27,13 +27,19 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\world.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="utils\GLMatrixScope.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gl\GLUT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="core\scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="core\dragonfly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="core\dragonfly\parts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,10 +50,16 @@
     <ClCompile Include="GKOM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\world\world.cpp">
+    <ClCompile Include="utils\GLMatrixScope.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="utils\GLMatrixScope.cpp">
+    <ClCompile Include="core\scene\scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="core\dragonfly\dragonfly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="core\dragonfly\body.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
