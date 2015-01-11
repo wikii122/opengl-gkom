@@ -33,6 +33,9 @@
     <ClInclude Include="utils\GLMatrixScope.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gl\GLUT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -52,5 +55,13 @@
     <ResourceCompile Include="GKOM.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gl\GLUT.DLL" />
+    <None Include="gl\GLUT32.DLL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="gl\GLUT.LIB" />
+    <Library Include="gl\GLUT32.LIB" />
   </ItemGroup>
 </Project>

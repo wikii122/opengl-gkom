@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\world.h" />
+    <ClInclude Include="gl\GLUT.H" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -97,6 +98,14 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GKOM.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gl\GLUT.DLL" />
+    <None Include="gl\GLUT32.DLL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="gl\GLUT.LIB" />
+    <Library Include="gl\GLUT32.LIB" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
