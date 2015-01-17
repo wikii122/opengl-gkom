@@ -5,7 +5,7 @@
 #include <gl/GLUT.h>
 #include "core\dragonfly\parts.h"
 #include "utils\GLMatrixScope.h"
-#include "utils\GLQuadratic.h"
+#include "utils\GLQuadric.h"
 
 void gkom::dragonfly::Body::draw(long time)
 {
@@ -16,7 +16,7 @@ void gkom::dragonfly::Body::draw(long time)
 
 	legs.draw(time);
 
-	GLQuadratic quadratic;
+	GLQuadric quadratic;
 	gluQuadricNormals(*quadratic, GLU_SMOOTH);
 	gluSphere(*quadratic, 0.5, 50, 50);
 }

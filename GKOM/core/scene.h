@@ -19,6 +19,7 @@ namespace gkom
 	private:
 		void init_light();
 		void init_scene();
+		void init_textures();
 	};
 };
 

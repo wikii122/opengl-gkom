@@ -6,7 +6,8 @@
 #include <iostream>
 #include "parts.h"
 #include "utils\GLMatrixScope.h"
-#include "utils\GLQuadratic.h"
+#include "utils\GLQuadric.h"
+#include "utils\textures.h"
 
 using namespace gkom::dragonfly;
 
@@ -28,7 +29,7 @@ void Head::draw_object(long time)
 	GLMatrixScope scope;
 	glTranslatef(0, -0.25, 1);
 	glRotatef(0, 0, 0.0, 0.0);
-	GLQuadratic quadratic;
+	GLQuadric quadratic;
 	gluQuadricNormals(*quadratic, GLU_SMOOTH);
 	gluSphere(*quadratic, 0.26, 50, 50);
 }
@@ -38,21 +39,24 @@ side(side) {}
 
 void Head::Eye::draw()
 {
+	Texture texture;
 	if (side == Left) {
 		GLMatrixScope scope;
 		glScalef(1, 1.2, 1);
 		glTranslatef(0.22, 0, 1);
 		glRotatef(90, -1, 0, 0.0);
-		GLQuadratic quadratic;
+		GLQuadric quadratic;
 		gluQuadricNormals(*quadratic, GLU_SMOOTH);
+		texture.apply(quadratic, "eye");
 		gluSphere(*quadratic, 0.28, 50, 50);
 	} else {
 		GLMatrixScope scope;
 		glScalef(1, 1.2, 1);
 		glTranslatef(-0.22, 0, 1);
 		glRotatef(90, -1, 0.0, 0.0);
-		GLQuadratic quadratic;
+		GLQuadric quadratic;
 		gluQuadricNormals(*quadratic, GLU_SMOOTH);
+		texture.apply(quadratic, "eye");
 		gluSphere(*quadratic, 0.28, 50, 50);
 	}
 }

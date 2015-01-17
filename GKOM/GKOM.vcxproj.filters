@@ -42,10 +42,10 @@
     <ClInclude Include="core\dragonfly\parts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\GLQuadratic.h">
+    <ClInclude Include="utils\textures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\textures.h">
+    <ClInclude Include="utils\GLQuadric.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -68,9 +68,6 @@
     <ClCompile Include="core\dragonfly\body.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="utils\GLQuadratic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="core\dragonfly\head.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -81,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils\textures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\GLQuadric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

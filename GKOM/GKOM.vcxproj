@@ -57,7 +57,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)gl\GLUT32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)gl\GLUT32.lib;opengl32.lib;$(ProjectDir)gl\lib\DevIL.lib;$(ProjectDir)gl\lib\ILU.lib;$(ProjectDir)gl\lib\ILUT.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AssemblyLinkResource>%(AssemblyLinkResource)</AssemblyLinkResource>
     </Link>
   </ItemDefinitionGroup>
@@ -91,7 +91,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="utils\textures.h" />
     <ClInclude Include="utils\GLMatrixScope.h" />
-    <ClInclude Include="utils\GLQuadratic.h" />
+    <ClInclude Include="utils\GLQuadric.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\dragonfly\dragonfly.cpp" />
@@ -107,7 +107,7 @@
     </ClCompile>
     <ClCompile Include="utils\textures.cpp" />
     <ClCompile Include="utils\GLMatrixScope.cpp" />
-    <ClCompile Include="utils\GLQuadratic.cpp" />
+    <ClCompile Include="utils\GLQuadric.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GKOM.rc" />

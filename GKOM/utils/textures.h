@@ -1,16 +1,29 @@
 #pragma once
+#include <exception>
+#include <map>
 #include <string>
+#include "utils\GLQuadric.h"
 
-class Textures
+namespace gkom
 {
-	Textures();
-public:
-	static Textures manager;
+	class Texture
+	{
+	private:
+		int counter;
+		static std::map<std::string, GLuint> ids;
+	public:
+		~Texture();
+		void init();
+		void load(std::string const& path, std::string const& name);
+		void apply(GLQuadric const& quadratic, std::string const& name);
+	};
 
-	Textures(Textures const&) = delete;
-	Textures operator=(Textures const&) = delete;
-
-	void load(std::string path, std::string name);
-	void apply(std::string name);
+	class file_not_found : std::exception
+	{
+		std::string msg;
+	public:
+		file_not_found(std::string message) :
+			msg(message) {}
+		virtual const char* what() const override;
+	};
 };
-
