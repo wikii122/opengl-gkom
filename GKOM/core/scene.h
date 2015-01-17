@@ -7,17 +7,18 @@ namespace gkom
 {
 	class Scene
 	{
-		std::unique_ptr<Dragonfly> dragonfly;
+		Dragonfly dragonfly;
 		long time;
 	public:
 		Scene() :
 			time(0) {}
 
 		void init();
-		void display();
+		void draw();
 		void reshape(int width, int heigth);
 	private:
 		void init_light();
+		void init_scene();
 	};
 };
 

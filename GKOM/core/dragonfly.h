@@ -10,12 +10,12 @@ namespace gkom
 		void position();
 	public:
 		Dragonfly();
-		void display(long t);
+		void draw(long t);
 	private:
 		dragonfly::Body body;
-		//dragonfly::Head head;
-		//dragonfly::Tail tail;
-		//dragonfly::Wings wings;
+		dragonfly::Head head;
+		dragonfly::Tail tail;
+		dragonfly::Wings wings;
 	};
 };
 

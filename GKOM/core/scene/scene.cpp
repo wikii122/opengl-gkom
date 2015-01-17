@@ -1,17 +1,22 @@
 #include "stdafx.h"
 #include "../scene.h"
 #include "gl\GLUT.H"
+#include "utils\GLMatrixScope.h"
 
 
 void gkom::Scene::init()
 {
+	init_scene();
 	init_light();
 }
 
-void gkom::Scene::display()
+void gkom::Scene::draw()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	dragonfly->display(time);
+	{
+		GLMatrixScope scope;
+		dragonfly.draw(time);
+	}
 	glFlush();
 
 	++time;
@@ -29,7 +34,7 @@ void gkom::Scene::reshape(int width, int height)
 		else {
 			glFrustum(-2.25*width/height, 2.25*width/height, -2.25, 2.25, 10.0, 200.0);
 		}
-		gluLookAt(-50.0, 0.0, -50.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+		gluLookAt(-20.0, 20.0, 20.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 		glMatrixMode(GL_MODELVIEW);
 	}
 }
@@ -52,7 +57,11 @@ void gkom::Scene::init_light()
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
+}
 
+void gkom::Scene::init_scene()
+{
 	glDepthFunc(GL_LESS);
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_NORMALIZE);
 }

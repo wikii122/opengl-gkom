@@ -4,17 +4,24 @@ namespace gkom
 {
 	namespace dragonfly
 	{
+		enum Side
+		{
+			Left,
+			Right
+		};
 		class Head
 		{
 		public:
 			Head();
-			void display(long time);
+			void draw(long time);
 		private:
+			void draw_object(long time);
 			class Eye
 			{
+				Side side;
 			public:
-				Eye();
-				void display(long time);
+				Eye(Side);
+				void draw();
 			};
 			Eye left, right;
 		};
@@ -22,35 +29,34 @@ namespace gkom
 		class Body
 		{
 		public:
-			Body();
-			void display();
+			void draw(long time);
 		private:
 			class Legs
 			{
 			public:
-				Legs();
-				void display(long time);
+				void draw(long time);
 			};
+			Legs legs;
 		};
 
 		class Tail
 		{
 		public:
-			Tail();
-			void display(long time);
+			void draw(long time);
 		};
 
 		class Wings
 		{
 		public:
 			Wings();
-			void display(long time);
+			void draw(long time);
 		private:
 			class Wing
 			{
+				Side side;
 			public:
-				Wing();
-				void display(long time);
+				Wing(Side);
+				void draw(long time);
 			};
 			Wing left, right;
 		};

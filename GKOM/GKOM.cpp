@@ -34,7 +34,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 void display()
 {
-	scene.display();
+	scene.draw();
 }
 
 void reshape(int width, int heigth)

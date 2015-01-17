@@ -1,9 +1,11 @@
 #pragma once
 
-class GLMatrixScope
+namespace gkom
 {
-public:
-	GLMatrixScope();
-	~GLMatrixScope();
+	class GLMatrixScope
+	{
+	public:
+		GLMatrixScope();
+		~GLMatrixScope();
+	};
 };
-

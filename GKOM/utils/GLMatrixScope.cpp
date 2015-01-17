@@ -3,13 +3,13 @@
 #include "gl/GLUT.H"
 
 
-GLMatrixScope::GLMatrixScope()
+gkom::GLMatrixScope::GLMatrixScope()
 {
 	glPushMatrix();
 }
 
 
-GLMatrixScope::~GLMatrixScope()
+gkom::GLMatrixScope::~GLMatrixScope()
 {
 	glPopMatrix();
 }

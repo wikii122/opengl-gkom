@@ -4,6 +4,7 @@
 #include <gl/GLU.h>
 #include <gl/GLUT.h>
 #include "..\dragonfly.h"
+#include "utils\GLMatrixScope.h"
 
 
 gkom::Dragonfly::Dragonfly()
@@ -11,13 +12,14 @@ gkom::Dragonfly::Dragonfly()
 
 }
 
-void gkom::Dragonfly::display(long time)
+void gkom::Dragonfly::draw(long time)
 {
+	GLMatrixScope scope;
 	position();
-	//head.display(time);
-	body.display();
-	//wings.display(time);
-	//tail.display(time);
+	head.draw(time);
+	body.draw(time);
+	wings.draw(time);
+	tail.draw(time);
 }
 
 void gkom::Dragonfly::position()
