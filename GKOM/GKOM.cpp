@@ -18,7 +18,7 @@ gkom::Scene scene;
 int _tmain(int argc, _TCHAR* argv[])
 try {
 	glutInit(&argc, (char**) argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA | GLUT_DEPTH);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(800, 600);
 
@@ -26,6 +26,7 @@ try {
 
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
+	glutIdleFunc(display);
 
 	scene.init();
 

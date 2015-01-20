@@ -20,8 +20,7 @@ void Scene::draw()
 		GLMatrixScope scope;
 		dragonfly.draw(time);
 	}
-	glFlush();
-
+	glutSwapBuffers();
 	++time;
 }
 

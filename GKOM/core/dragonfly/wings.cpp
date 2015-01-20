@@ -22,11 +22,12 @@ void Wings::draw(long time)
 
 void Wings::Wing::draw(long time)
 {
+	int angle = time % 60 - 30;
 	if (side == Left) {
 		{
 			GLMatrixScope scope;
 			glTranslatef(0, 0.4f, 0);
-			glRotatef(-45, 0, 0, 1);
+			glRotatef(-angle, 0, 0, 1);
 			glTranslatef(1.9f, 0, 0.3f);
 			glScalef(4, 0.01f, 0.5f);
 			GLQuadric quadratic;
@@ -36,7 +37,7 @@ void Wings::Wing::draw(long time)
 		{
 			GLMatrixScope scope;
 			glTranslatef(0, 0.4f, 0);
-			glRotatef(-45, 0, 0, 1);
+			glRotatef(-angle, 0, 0, 1);
 			glTranslatef(1.9f, 0, -0.3f);
 			glScalef(4, 0.01f, 0.5f);
 			GLQuadric quadratic;
@@ -47,7 +48,7 @@ void Wings::Wing::draw(long time)
 		{
 			GLMatrixScope scope;
 			glTranslatef(0, 0.4f, 0);
-			glRotatef(45, 0, 0, 1);
+			glRotatef(angle, 0, 0, 1);
 			glTranslatef(-1.9f, 0, -0.3f);
 			glScalef(4, 0.01f, 0.5f);
 			GLQuadric quadratic;
@@ -57,7 +58,7 @@ void Wings::Wing::draw(long time)
 		{
 			GLMatrixScope scope;
 			glTranslatef(0, 0.4f, 0);
-			glRotatef(45, 0, 0, 1);
+			glRotatef(angle, 0, 0, 1);
 			glTranslatef(-1.9f, 0, 0.3f);
 			glScalef(4, 0.01f, 0.5f);
 			GLQuadric quadratic;
