@@ -41,18 +41,18 @@ void Skybox::draw(Camera& camera)
 	
 	texture.apply(back);
 	glBegin(GL_QUADS);
-		glTexCoord2f(0, 0); glVertex3f(size/2, size/2, size/2); 
-		glTexCoord2f(1, 0); glVertex3f(-size/2, size/2, size/2);
-		glTexCoord2f(1, 1); glVertex3f(-size/2, -size/2, size/2);
-		glTexCoord2f(0, 1); glVertex3f(size/2, -size/2, size/2);
+		glTexCoord2f(0, 1); glVertex3f(size/2, size/2, size/2); 
+		glTexCoord2f(1, 1); glVertex3f(-size/2, size/2, size/2);
+		glTexCoord2f(1, 0); glVertex3f(-size/2, -size/2, size/2);
+		glTexCoord2f(0, 0); glVertex3f(size/2, -size/2, size/2);
 	glEnd();
 
 	texture.apply(left);
 	glBegin(GL_QUADS);
-		glTexCoord2f(1, 1); glVertex3f(-size/2, size/2, size/2);
-		glTexCoord2f(1, 0); glVertex3f(-size/2, size/2, -size/2);
-		glTexCoord2f(0, 0); glVertex3f(-size/2, -size/2, -size/2);
-		glTexCoord2f(0, 1); glVertex3f(-size/2, -size/2, size/2);
+		glTexCoord2f(0, 1); glVertex3f(-size/2, size/2, size/2);
+		glTexCoord2f(1, 1); glVertex3f(-size/2, size/2, -size/2);
+		glTexCoord2f(1, 0); glVertex3f(-size/2, -size/2, -size/2);
+		glTexCoord2f(0, 0); glVertex3f(-size/2, -size/2, size/2);
 	glEnd();
 
 	texture.apply(front);
@@ -65,26 +65,26 @@ void Skybox::draw(Camera& camera)
 
 	texture.apply(right);
 	glBegin(GL_QUADS);
-		glTexCoord2f(1, 1); glVertex3f(size/2, size/2, -size/2);
-		glTexCoord2f(0, 1); glVertex3f(size/2, size/2, size/2);
-		glTexCoord2f(0, 0); glVertex3f(size/2, -size/2, size/2);
-		glTexCoord2f(1, 0); glVertex3f(size/2, -size/2, -size/2);
+		glTexCoord2f(0, 1); glVertex3f(size/2, size/2, -size/2);
+		glTexCoord2f(1, 1); glVertex3f(size/2, size/2, size/2);
+		glTexCoord2f(1, 0); glVertex3f(size/2, -size/2, size/2);
+		glTexCoord2f(0, 0); glVertex3f(size/2, -size/2, -size/2);
 	glEnd();
 
 	texture.apply(top);
 	glBegin(GL_QUADS);
-		glTexCoord2f(1, 0); glVertex3f(size/2, size/2, size/2);
-		glTexCoord2f(0, 0); glVertex3f(-size/2, size/2, size/2);
-		glTexCoord2f(0, 1); glVertex3f(-size/2, size/2, -size/2);
-		glTexCoord2f(1, 1); glVertex3f(size/2, size/2, -size/2);
+		glTexCoord2f(1, 1); glVertex3f(size/2, size/2, size/2);
+		glTexCoord2f(0, 1); glVertex3f(-size/2, size/2, size/2);
+		glTexCoord2f(0, 0); glVertex3f(-size/2, size/2, -size/2);
+		glTexCoord2f(1, 0); glVertex3f(size/2, size/2, -size/2);
 	glEnd();
 
 	texture.apply(bottom);
 	glBegin(GL_QUADS);
-		glTexCoord2f(1, 1); glVertex3f(size/2, -size/2, size/2);
-		glTexCoord2f(0, 1); glVertex3f(size/2, -size/2, -size/2);
-		glTexCoord2f(1, 1); glVertex3f(-size/2, -size/2, -size/2);
-		glTexCoord2f(1, 0); glVertex3f(-size/2, -size/2, size/2);
+		glTexCoord2f(1, 0); glVertex3f(size/2, -size/2, size/2);
+		glTexCoord2f(1, 1); glVertex3f(size/2, -size/2, -size/2);
+		glTexCoord2f(0, 1); glVertex3f(-size/2, -size/2, -size/2);
+		glTexCoord2f(0, 0); glVertex3f(-size/2, -size/2, size/2);
 	glEnd();
 
 	glEnable(GL_LIGHTING);
