@@ -1,13 +1,15 @@
 #pragma once
 #include <memory>
-#include "core/dragonfly.h"
-
-
+#include "core\dragonfly.h"
+#include "core\camera.h"
+#include "skybox.h"
 namespace gkom
 {
 	class Scene
 	{
 		Dragonfly dragonfly;
+		Camera camera;
+		Skybox skybox;
 		long time;
 	public:
 		Scene() :

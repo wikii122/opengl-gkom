@@ -16,6 +16,7 @@ namespace gkom
 		void init();
 		void load(std::string const& path, std::string const& name);
 		void apply(GLQuadric const& quadratic, std::string const& name);
+		void apply(std::string name);
 	};
 
 	class file_not_found : std::exception

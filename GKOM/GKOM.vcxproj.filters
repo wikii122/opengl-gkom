@@ -48,6 +48,12 @@
     <ClInclude Include="utils\GLQuadric.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="core\skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="core\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -81,6 +87,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils\GLQuadric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="core\skybox\skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="core\camera\camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -55,6 +55,17 @@ void Texture::apply(GLQuadric const& quadratic, string const& name)
 	gluQuadricTexture(*quadratic, GL_TRUE);
 	glBindTexture(GL_TEXTURE_2D, id);
 }
+
+void Texture::apply(std::string name)
+{
+	auto id = ids[name];
+	if (id == 0) {
+		std::cout << "Undefined name for texture: " << name << std::endl;
+		return;
+	}
+
+	glBindTexture(GL_TEXTURE_2D, id);
+}
 const char* file_not_found::what() const
 {
 	return msg.c_str();

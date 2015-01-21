@@ -1,16 +1,19 @@
 #include "stdafx.h"
 #include "../scene.h"
 #include "gl\GLUT.H"
+#include "core\camera.h"
 #include "utils\GLMatrixScope.h"
 #include "utils\textures.h"
 
 using namespace gkom;
+
 
 void Scene::init()
 {
 	init_scene();
 	init_light();
 	init_textures();
+	skybox.init();
 }
 
 void Scene::draw()
@@ -18,6 +21,8 @@ void Scene::draw()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	{
 		GLMatrixScope scope;
+		camera.set(time);
+		skybox.draw(camera);
 		dragonfly.draw(time);
 	}
 	glutSwapBuffers();
@@ -31,12 +36,11 @@ void Scene::reshape(int width, int height)
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		if (width <= height) {
-			glFrustum(-2.25, 2.25, -2.25*height/width, 2.25*height/width, 10.0, 200.0);
+			glFrustum(-2.25, 2.25, -2.25*height/width, 2.25*height/width, 10.0, 500.0);
 		}
 		else {
-			glFrustum(-2.25*width/height, 2.25*width/height, -2.25, 2.25, 10.0, 200.0);
+			glFrustum(-2.25*width/height, 2.25*width/height, -2.25, 2.25, 10.0, 500.0);
 		}
-		gluLookAt(-20.0, 20.0, 20.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 		glMatrixMode(GL_MODELVIEW);
 	}
 }
@@ -67,6 +71,7 @@ void Scene::init_scene()
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_NORMALIZE);
 	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_FOG);
 }
 
 void Scene::init_textures()
