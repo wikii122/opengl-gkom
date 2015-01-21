@@ -20,11 +20,12 @@ const std::string back = "skybox:back";
 void Skybox::init()
 {
 	Texture texture;
-	texture.load("res/bluesky_back.jpg", back);
-	texture.load("res/bluesky_front.jpg", front);
-	texture.load("res/bluesky_left.jpg", left);
-	texture.load("res/bluesky_right.jpg", right);
-	texture.load("res/bluesky_top.jpg", top);
+	texture.load("res/back.jpg", back);
+	texture.load("res/front.jpg", front);
+	texture.load("res/left.jpg", left);
+	texture.load("res/right.jpg", right);
+	texture.load("res/up.jpg", top);
+	texture.load("res/down.jpg", bottom);
 }
 
 void Skybox::draw(Camera& camera)
@@ -48,26 +49,26 @@ void Skybox::draw(Camera& camera)
 
 	texture.apply(left);
 	glBegin(GL_QUADS);
-		glTexCoord2f(0, 0); glVertex3f(-size/2, size/2, size/2);
+		glTexCoord2f(1, 1); glVertex3f(-size/2, size/2, size/2);
 		glTexCoord2f(1, 0); glVertex3f(-size/2, size/2, -size/2);
-		glTexCoord2f(1, 1); glVertex3f(-size/2, -size/2, -size/2);
+		glTexCoord2f(0, 0); glVertex3f(-size/2, -size/2, -size/2);
 		glTexCoord2f(0, 1); glVertex3f(-size/2, -size/2, size/2);
 	glEnd();
 
 	texture.apply(front);
 	glBegin(GL_QUADS);
-		glTexCoord2f(1, 0); glVertex3f(size/2, size/2, -size/2);
-		glTexCoord2f(0, 0); glVertex3f(-size/2, size/2, -size/2);
-		glTexCoord2f(0, 1); glVertex3f(-size/2, -size/2, -size/2);
-		glTexCoord2f(1, 1); glVertex3f(size/2, -size/2, -size/2);
+		glTexCoord2f(1, 1); glVertex3f(size/2, size/2, -size/2);
+		glTexCoord2f(0, 1); glVertex3f(-size/2, size/2, -size/2);
+		glTexCoord2f(0, 0); glVertex3f(-size/2, -size/2, -size/2);
+		glTexCoord2f(1, 0); glVertex3f(size/2, -size/2, -size/2);
 	glEnd();
 
 	texture.apply(right);
 	glBegin(GL_QUADS);
-		glTexCoord2f(0, 0); glVertex3f(size/2, size/2, -size/2);
-		glTexCoord2f(1, 0); glVertex3f(size/2, size/2, size/2);
-		glTexCoord2f(1, 1); glVertex3f(size/2, -size/2, size/2);
-		glTexCoord2f(0, 1); glVertex3f(size/2, -size/2, -size/2);
+		glTexCoord2f(1, 1); glVertex3f(size/2, size/2, -size/2);
+		glTexCoord2f(0, 1); glVertex3f(size/2, size/2, size/2);
+		glTexCoord2f(0, 0); glVertex3f(size/2, -size/2, size/2);
+		glTexCoord2f(1, 0); glVertex3f(size/2, -size/2, -size/2);
 	glEnd();
 
 	texture.apply(top);
@@ -76,6 +77,14 @@ void Skybox::draw(Camera& camera)
 		glTexCoord2f(0, 0); glVertex3f(-size/2, size/2, size/2);
 		glTexCoord2f(0, 1); glVertex3f(-size/2, size/2, -size/2);
 		glTexCoord2f(1, 1); glVertex3f(size/2, size/2, -size/2);
+	glEnd();
+
+	texture.apply(bottom);
+	glBegin(GL_QUADS);
+		glTexCoord2f(1, 1); glVertex3f(size/2, -size/2, size/2);
+		glTexCoord2f(0, 1); glVertex3f(size/2, -size/2, -size/2);
+		glTexCoord2f(1, 1); glVertex3f(-size/2, -size/2, -size/2);
+		glTexCoord2f(1, 0); glVertex3f(-size/2, -size/2, size/2);
 	glEnd();
 
 	glEnable(GL_LIGHTING);
