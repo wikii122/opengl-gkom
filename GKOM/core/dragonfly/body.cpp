@@ -10,15 +10,13 @@
 void gkom::dragonfly::Body::draw(long time)
 {
 	GLMatrixScope scope;
-	glScalef(1, 1, 2);
-	glTranslatef(0.0, 0.0, 0.0);
-	glRotatef(0, 0, 0.0, 0.0);
+	glScalef(1, 1, 3);
 
 	legs.draw(time);
 
 	GLQuadric quadratic;
 	gluQuadricNormals(*quadratic, GLU_SMOOTH);
-	gluSphere(*quadratic, 0.5, 50, 50);
+	gluSphere(*quadratic, 0.4, 64, 64);
 }
 
 void gkom::dragonfly::Body::Legs::draw(long time)

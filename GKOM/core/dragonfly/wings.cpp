@@ -1,4 +1,6 @@
 #include "stdafx.h"
+#include <cmath>
+#include <iostream>
 #include "parts.h"
 #include "utils\GLMatrixScope.h"
 #include "utils\GLQuadric.h"
@@ -22,11 +24,11 @@ void Wings::draw(long time)
 
 void Wings::Wing::draw(long time)
 {
-	int angle = time % 60 - 30;
+	int angle = 40.0 * std::sin(((double)time)*.11);
 	if (side == Left) {
 		{
 			GLMatrixScope scope;
-			glTranslatef(0, 0.4f, 0);
+			glTranslatef(0, 0.3f, 0);
 			glRotatef(-angle, 0, 0, 1);
 			glTranslatef(1.9f, 0, 0.3f);
 			glScalef(4, 0.01f, 0.5f);
@@ -36,7 +38,7 @@ void Wings::Wing::draw(long time)
 		}
 		{
 			GLMatrixScope scope;
-			glTranslatef(0, 0.4f, 0);
+			glTranslatef(0, 0.3f, 0);
 			glRotatef(-angle, 0, 0, 1);
 			glTranslatef(1.9f, 0, -0.3f);
 			glScalef(4, 0.01f, 0.5f);

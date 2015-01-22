@@ -27,11 +27,10 @@ void Head::draw(long time)
 void Head::draw_object(long time)
 {
 	GLMatrixScope scope;
-	glTranslatef(0, -0.25, 1);
-	glRotatef(0, 0, 0.0, 0.0);
+	glTranslatef(0, -0.2, 1);
 	GLQuadric quadratic;
 	gluQuadricNormals(*quadratic, GLU_SMOOTH);
-	gluSphere(*quadratic, 0.26, 50, 50);
+	gluSphere(*quadratic, 0.22, 64, 64);
 }
 
 Head::Eye::Eye(Side side):
@@ -43,20 +42,20 @@ void Head::Eye::draw()
 	if (side == Left) {
 		GLMatrixScope scope;
 		glScalef(1, 1.2, 1);
-		glTranslatef(0.22, 0, 1);
+		glTranslatef(0.18, 0, 1.1);
 		glRotatef(90, -1, 0, 0.0);
 		GLQuadric quadratic;
 		gluQuadricNormals(*quadratic, GLU_SMOOTH);
 		texture.apply(quadratic, "eye");
-		gluSphere(*quadratic, 0.28, 50, 50);
+		gluSphere(*quadratic, 0.21, 64, 64);
 	} else {
 		GLMatrixScope scope;
 		glScalef(1, 1.2, 1);
-		glTranslatef(-0.22, 0, 1);
+		glTranslatef(-0.18, 0, 1.1);
 		glRotatef(90, -1, 0.0, 0.0);
 		GLQuadric quadratic;
 		gluQuadricNormals(*quadratic, GLU_SMOOTH);
 		texture.apply(quadratic, "eye");
-		gluSphere(*quadratic, 0.28, 50, 50);
+		gluSphere(*quadratic, 0.21, 64, 64);
 	}
 }

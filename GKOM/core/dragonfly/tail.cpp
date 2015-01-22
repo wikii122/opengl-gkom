@@ -8,7 +8,7 @@ using namespace gkom::dragonfly;
 void Tail::draw(long time)
 {
 	GLMatrixScope display;
-	glScalef(0.5f, 0.4f, 4.1f);
+	glScalef(0.7f, 0.5f, 4.0f);
 	glTranslatef(0, 0.18f, -0.5f);
 	GLQuadric quadratic;
 	gluQuadricNormals(*quadratic, GLU_SMOOTH);
