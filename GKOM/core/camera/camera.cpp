@@ -9,7 +9,10 @@
 void gkom::Camera::set(long time)
 {
 	gluLookAt(eye_x, eye_y, eye_z, model_x, model_y, model_z, 0.0, 1.0, 0.0);
-	eye_x -= 0.1;
+	eye_x -= change;
+	if (eye_x > 450 || eye_x < -450) {
+		change = -change;
+	}
 }
 
 void gkom::Camera::center()

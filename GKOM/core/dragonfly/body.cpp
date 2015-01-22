@@ -25,22 +25,22 @@ void gkom::dragonfly::Body::Legs::draw(long time)
 	glBegin(GL_LINES);
 
 	glVertex3f(0, 0, 0);
-	glVertex3f(0.5, -0.7, 0.5);
+	glVertex3f(0.4, -0.6, 0.4);
 
 	glVertex3f(0, 0, 0);
-	glVertex3f(-0.5, -0.7, 0.5);
+	glVertex3f(-0.4, -0.6, 0.4);
 
 	glVertex3f(0, 0, 0);
-	glVertex3f(-0.5, -0.7, -0.5);
+	glVertex3f(-0.4, -0.6, -0.4);
 
 	glVertex3f(0, 0, 0);
-	glVertex3f(0.5, -0.7, -0.5);
+	glVertex3f(0.4, -0.6, -0.4);
 
 	glVertex3f(0, 0, 0);
-	glVertex3f(0.5, -0.7, 0);
+	glVertex3f(0.4, -0.6, 0);
 
 	glVertex3f(0, 0, 0);
-	glVertex3f(-0.5, -0.7, 0);
+	glVertex3f(-0.4, -0.6, 0);
 
 	glEnd();
 }
